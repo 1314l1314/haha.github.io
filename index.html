@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>森林火灾评估平台</title>
+    <style>
+        /* 美化界面的CSS样式 */
+    </style>
+</head>
+<body>
+    <h1>森林火灾评估平台</h1>
+    <form id="inputForm">
+        <label for="temperature">温度：</label>
+        <input type="number" id="temperature" required><br>
+        <label for="humidity">湿度：</label>
+        <input type="number" id="humidity" required><br>
+        <input type="submit" value="评估">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        // 用JavaScript编写交互逻辑
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // 从输入框获取温度和湿度
+            var temperature = parseFloat(document.getElementById('temperature').value);
+            var humidity = parseFloat(document.getElementById('humidity').value);
+
+            // 模拟计算火灾风险（这里仅为示例，实际计算可能非常复杂）
+            var fireRisk = temperature * (1 / humidity);
+
+            // 显示结果
+            document.getElementById('result').innerText = '火灾风险评估结果：' + fireRisk;
+        });
+    </script>
+</body>
+</html>
